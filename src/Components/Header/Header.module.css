@@ -15,7 +15,7 @@ ul {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 li {
@@ -24,6 +24,7 @@ li {
     color: white;
     cursor: pointer;
     transition: color 0.3s;
+
 }
 
 li:hover {
