@@ -28,10 +28,11 @@ const Popular = () => {
             <ul>
                 {posts.map(post => (
                     <li key={post.id}>
-                        <a href={`https://www.reddit.com${post.permalink}`} target="_blank" rel="noopener noreferrer">
-                            {post.title}
-                        </a>
-                    </li>
+                    <img src={post.thumbnail} alt={post.title} className="thumbnail" />
+                    <a href={`https://www.reddit.com${post.permalink}`} target="_blank" rel="noopener noreferrer">
+                        {post.title}
+                    </a>
+                </li>
                 ))}
             </ul>
         </div>
