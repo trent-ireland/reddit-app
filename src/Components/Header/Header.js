@@ -20,6 +20,7 @@ const Header = () => {
                 <SearchBar />
            </div>
            {showPopular && <Popular />}
+    
         </>
     );
 };
