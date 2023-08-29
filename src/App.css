@@ -4,8 +4,6 @@ body {
   padding: 0;
   background-color: #f4f4f4;
 }
-
-/* App container styles */
 .App {
   display: flex;
   flex-direction: column;

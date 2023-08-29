@@ -1,20 +1,10 @@
-
 input[type="text"] {
-    padding: 10px 15px; /* Top and side padding */
-    font-size: 16px; /* Font size of the input text */
-    border: 1px solid #ccc; /* Border around the input */
-    border-radius: 5px; /* Rounded corners */
-    width: 100%; /* Full width */
-    box-sizing: border-box; /* Makes sure padding and border are included in the total width */
-    transition: border-color 0.3s; /* Smooth transition for border color changes */
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
     margin-top: 10px;
-}
-
-input[type="text"]:focus {
-    border-color: #020b13; /* Change border color when input is focused */
-    outline: none; /* Remove default browser outline */
-}
-
-input[type="text"]::placeholder {
-    color: #848282; /* Placeholder text color */
 }
