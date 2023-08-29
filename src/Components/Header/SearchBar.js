@@ -1,21 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import './SearchBar.css';
+import PostItem from '../Main/PostItem';
+// Assuming you have a separate Post component, import it here:
+// import Post from './Post';
 
 function SubredditSearch() {
   const [searchTerm, setSearchTerm] = useState('');
   const [subreddits, setSubreddits] = useState([]);
 
-  useEffect(() => {
+  useEffect(() => { // Removed the '.' before useEffect
     if (searchTerm) {
       axios
         .get(`https://www.reddit.com/subreddits/search.json?q=${searchTerm}`)
         .then((response) => {
           const subredditData = response.data.data.children
-            .slice(0, 5) // Limit results to the first 5 subreddits
+            .slice(0, 5)
             .map((child) => {
               return {
                 name: child.data.display_name,
                 subscribers: child.data.subscribers,
+                imageUrl: child.data.header_img || child.data.icon_img // Extract the image URL
               };
             });
           setSubreddits(subredditData);
@@ -27,7 +32,7 @@ function SubredditSearch() {
       setSubreddits([]);
     }
   }, [searchTerm]);
-
+  
   const handleInputChange = (event) => {
     setSearchTerm(event.target.value);
   };
@@ -40,15 +45,18 @@ function SubredditSearch() {
         value={searchTerm}
         onChange={handleInputChange}
       />
-      <ul>
+      <div className="posts">
         {subreddits.map((subreddit) => (
-          <li key={subreddit.name}>
-            {subreddit.name} - Subscribers: {subreddit.subscribers}
-          </li>
+          <PostItem 
+            key={subreddit.name}
+            name={subreddit.name}
+            subscribers={subreddit.subscribers}
+            imageUrl={subreddit.imageUrl}
+          />
         ))}
-      </ul>
+      </div>
     </div>
   );
-}
+} // Added the closing brace for the function
 
 export default SubredditSearch;

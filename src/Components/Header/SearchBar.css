@@ -24,3 +24,34 @@ i {
     font-size: 16px;
     color: #aaa;
 }
+
+.post-container {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+  }
+  
+  .subreddit-image {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .post-details {
+    flex-grow: 1;
+  }
+  .post-details h3 {
+    cursor: pointer;
+    color: #0079d3;
+    transition: color 0.3s;
+  }
+  
+  .post-details h3:hover {
+    color: #005a8e;
+  }
+  
