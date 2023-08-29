@@ -1,0 +1,12 @@
+/* SearchResults.css */
+
+.search-results {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .search-results li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #ccc;
+  }
+  

@@ -3,7 +3,7 @@ import PostItem from "./PostItem";
 const Main = () => {
   return (
     <div>
-      <PostItem />
+      
     </div>
   );
 }
